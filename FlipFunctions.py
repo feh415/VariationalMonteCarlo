@@ -1,7 +1,6 @@
 import numpy as np
 import random
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
 class local_flags_FF:
 	def __init__(self):
 		self.test_flip_indices = False

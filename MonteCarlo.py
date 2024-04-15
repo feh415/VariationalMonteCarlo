@@ -3,7 +3,7 @@ from SetUp import*
 
 class local_flags_MC:
     def __init__(self):
-        self.print_results = False
+        self._results = False
         self.plot_results = False
          # 0 for comparing s_state, 1 for comparing k_staten None else
         self.compare_omc = None
@@ -157,9 +157,6 @@ class Sample:
                 states.append(state)
 
         total_energies = np.array(energies) + np.array(energies_xy)
-        if flags_MC.print_results:
-
-            print('Energy_z = ',np.sum(energies[200:])/len(energies[200:]), np.sum(energies_xy[200:])/len(energies_xy[200:]), np.sum(total_energies[200:])/len(total_energies[200:]))
         if flags_MC.plot_results:
             plt.yscale('log')
             plt.plot(ps)
@@ -170,5 +167,4 @@ class Sample:
 
         elif flags_MC.compare_omc == 0:
             return ps, data[0]
-        print("Mean Energies", np.mean(energies[800:]), np.mean(energies_xy[800:]))
         return ps, states, list(total_energies)

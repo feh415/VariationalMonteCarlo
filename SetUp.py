@@ -105,7 +105,8 @@ def compute_energy_2D(N, sites, k_states, invs,temperature = 0):
     E_xy = -1/2 * np.sum(prob_state)
     #print(E_xy, E_z)
     if (abs(E_xy+E_z) > 1.5*N**2):
-        print(det, E_xy, E_z)
+        pass
+        #print(det, E_xy, E_z)
     energy = [E_z/(N*(N-1)), E_xy/(N*(N-1))]
     return energy
 def get_initial_k(length, spin_number, temperature, dim, h, theta, lat_const=1):
